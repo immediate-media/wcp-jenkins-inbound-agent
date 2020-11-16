@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - FAB-30701
+      - feat/FAB-30701
   workflow_dispatch:
 
 env:
