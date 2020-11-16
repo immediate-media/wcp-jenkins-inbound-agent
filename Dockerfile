@@ -7,7 +7,7 @@ LABEL Description="This is a base image, which allows connecting Jenkins agents 
 ARG user=jenkins
 
 USER root
-ADD https://github.com/jenkinsci/docker-inbound-agent/blob/master/jenkins-agent /usr/local/bin/jenkins-agent
+RUN curl https://raw.githubusercontent.com/jenkinsci/docker-inbound-agent/master/jenkins-agent -o jenkins-agent && cp jenkins-agent /usr/local/bin/jenkins-agent
 RUN apt-get update
 RUN apt install curl php-cli php-mbstring php-xml php-gd php-zip git jq unzip php- -y
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
